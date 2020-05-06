@@ -21,7 +21,6 @@ public class Keret {
 
 	public void setTask(String task) {
         actualTask = task;
-        using();
 	}
 
 	public boolean getUsed() {

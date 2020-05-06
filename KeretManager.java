@@ -39,7 +39,9 @@ public class KeretManager {
             }
             if(keret.isEmpty()){
                 keret.setTask(task);
+                PutItBack();
                 taskList.add(keret.getName());
+                laphibaCNT++;
                 return;
             }
         }
@@ -51,11 +53,15 @@ public class KeretManager {
             else if(!kerets.get(0).getUsed()){
                 kerets.get(0).setTask(task);
                 taskList.add(kerets.get(0).getName());
+                PutItBack();
+                laphibaCNT++;
                 return;
             }
             if(i == 4){
                 kerets.get(0).setTask(task);
                 taskList.add(kerets.get(0).getName());
+                PutItBack();
+                laphibaCNT++;
                 return;
             }
         }
@@ -69,9 +75,8 @@ public class KeretManager {
     private String[] toStrings() {
         String tmp = "";
         for (String task : taskList) {
-            tmp += task + ",";
+            tmp += task;
         }
-        tmp = tmp.substring(0, tmp.length()-1);
         String[] result = {tmp, String.valueOf(laphibaCNT)};
         return result;
     }
