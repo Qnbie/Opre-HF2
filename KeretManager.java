@@ -37,6 +37,8 @@ public class KeretManager {
                 taskList.add("-");
                 return;
             }
+        }
+        for (Keret keret : kerets) {
             if(keret.isEmpty()){
                 keret.setTask(task);
                 PutItBack();
